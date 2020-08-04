@@ -37,6 +37,7 @@ p {
     color: honeydew;
 }
 .flex-container {
+    width: 90%;
     display: flex;
     justify-content: space-between;
     margin: 2vw auto;
@@ -52,10 +53,14 @@ p {
         display: none;
     }
     .flex-container {
-        flex-wrap: wrap;
+        display: block;
     }
-    .flex-container > div {
-        width: 50%;
+    .flex-container .first {
+        width: 66%;
+    }
+    .flex-container .second, .flex-container .third {
+        width: 33%;
+        display: inline-block;
     }
 }
 @media only screen and (max-width: 500px) {
@@ -68,7 +73,11 @@ p {
     #medium, #large {
         display: none;
     }
-    .flex-container > div {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-container .second, .flex-container .third, .flex-container .first {
         width: 100%;
     }
 }
